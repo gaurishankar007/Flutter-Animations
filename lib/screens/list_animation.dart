@@ -53,3 +53,4 @@ class _ListViewAnimationState extends State<ListViewAnimation> {
     );
   }
 }
+
