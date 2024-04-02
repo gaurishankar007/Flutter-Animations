@@ -18,7 +18,7 @@ class _ImplicitAnimationsState extends State<ImplicitAnimations> {
         child: Center(
           child: Column(
             children: [
-              TweenAnimationBuilder(
+              TweenAnimationBuilder<double>(
                 tween: Tween<double>(begin: 0, end: 1),
                 duration: const Duration(seconds: 1),
                 builder: (context, value, child) {
@@ -63,7 +63,9 @@ class _ImplicitAnimationsState extends State<ImplicitAnimations> {
                 width: width,
                 height: 200,
                 decoration: BoxDecoration(
-                    color: color, borderRadius: BorderRadius.circular(10)),
+                  color: color,
+                  borderRadius: BorderRadius.circular(10),
+                ),
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [

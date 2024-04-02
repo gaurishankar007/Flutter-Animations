@@ -20,7 +20,7 @@ class _ListViewAnimationState extends State<ListViewAnimation> {
     super.initState();
     WidgetsBinding.instance.addPostFrameCallback((_) async {
       for (int i = 0; i < 5; i++) {
-        key.currentState!.insertItem(i);
+        key.currentState?.insertItem(i);
         await Future.delayed(const Duration(milliseconds: 200));
       }
     });

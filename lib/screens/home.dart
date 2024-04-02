@@ -12,23 +12,23 @@ class Home extends StatelessWidget {
           width: double.maxFinite,
           height: double.maxFinite,
           child: Column(
-            crossAxisAlignment: CrossAxisAlignment.center,
+            mainAxisAlignment: MainAxisAlignment.center,
             children: [
               ElevatedButton(
                 onPressed: () => Navigator.pushNamed(context, "/implicit"),
                 child: const Text("Implicit Animations"),
               ),
-              const SizedBox(height: 20),
+              const SizedBox(height: 30),
               ElevatedButton(
                 onPressed: () => Navigator.pushNamed(context, "/explicit"),
                 child: const Text("Explicit Animations"),
               ),
-              const SizedBox(height: 20),
+              const SizedBox(height: 30),
               ElevatedButton(
                 onPressed: () => Navigator.pushNamed(context, "/animatedList"),
                 child: const Text("List View Animations"),
               ),
-              const SizedBox(height: 20),
+              const SizedBox(height: 30),
               ElevatedButton(
                 onPressed: () => Navigator.pushNamed(context, "/bouncingItem"),
                 child: const Text("Bouncing Item"),
