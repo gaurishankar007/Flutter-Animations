@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 
-class ExplicitAnimations extends StatefulWidget {
-  const ExplicitAnimations({super.key});
+class MultipleAnimations extends StatefulWidget {
+  const MultipleAnimations({super.key});
 
   @override
-  State<ExplicitAnimations> createState() => _ExplicitAnimationsState();
+  State<MultipleAnimations> createState() => _MultipleAnimationsState();
 }
 
-class _ExplicitAnimationsState extends State<ExplicitAnimations> with TickerProviderStateMixin {
+class _MultipleAnimationsState extends State<MultipleAnimations> with TickerProviderStateMixin {
   late final AnimationController slideController;
   late final AnimationController colorSizeController;
   late final Animation<Offset> offsetAnimation;
@@ -23,14 +23,14 @@ class _ExplicitAnimationsState extends State<ExplicitAnimations> with TickerProv
         AnimationController(vsync: this, duration: const Duration(milliseconds: 1200));
 
     offsetAnimation = Tween(
-      begin: const Offset(7, 0),
+      begin: const Offset(1, 0),
       end: const Offset(0, 0),
     ).animate(slideController);
 
     final sizeTween = TweenSequence<double>(
       [
-        TweenSequenceItem(tween: Tween(begin: 20, end: 50), weight: 50),
-        TweenSequenceItem(tween: Tween(begin: 50, end: 20), weight: 50),
+        TweenSequenceItem(tween: Tween(begin: 40, end: 80), weight: 50),
+        TweenSequenceItem(tween: Tween(begin: 80, end: 40), weight: 50),
       ],
     );
     sizeAnimation = sizeTween.animate(
@@ -63,16 +63,21 @@ class _ExplicitAnimationsState extends State<ExplicitAnimations> with TickerProv
             builder: (context, child) {
               return SlideTransition(
                 position: offsetAnimation,
-                child: IconButton(
-                  onPressed: () {
-                    if (colorSizeController.isDismissed) colorSizeController.forward();
-                    if (colorSizeController.isCompleted) colorSizeController.reverse();
-                  },
-                  icon: Icon(
-                    Icons.favorite,
-                    color: colorAnimation.value,
-                    size: sizeAnimation.value,
-                  ),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    IconButton(
+                      onPressed: () {
+                        if (colorSizeController.isDismissed) colorSizeController.forward();
+                        if (colorSizeController.isCompleted) colorSizeController.reverse();
+                      },
+                      icon: Icon(
+                        Icons.favorite,
+                        color: colorAnimation.value,
+                        size: sizeAnimation.value,
+                      ),
+                    ),
+                  ],
                 ),
               );
             },

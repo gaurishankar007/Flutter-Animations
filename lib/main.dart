@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_animations/screens/bouncing_item.dart';
-import 'package:flutter_animations/screens/explicit_animations.dart';
-import 'package:flutter_animations/screens/home.dart';
-import 'package:flutter_animations/screens/implicit_animations.dart';
-import 'package:flutter_animations/screens/list_animation.dart';
+import 'screens/explicit/bouncing_item.dart';
+import 'screens/explicit/multiple_animations.dart';
+import 'screens/home.dart';
+import 'screens/implicit/animated_list_view.dart';
+import 'screens/implicit/animated_widgets.dart';
+import 'screens/implicit/ticker_animation.dart';
+import 'screens/implicit/tween_builders.dart';
 
 void main() {
   runApp(const MyApp());
@@ -24,10 +26,12 @@ class MyApp extends StatelessWidget {
       initialRoute: "/",
       routes: {
         "/": (context) => const Home(),
-        "/implicit": (context) => const ImplicitAnimations(),
-        "/explicit": (context) => const ExplicitAnimations(),
-        "/animatedList": (context) => const ListViewAnimation(),
+        "/ticker": (context) => const TickerAnimation(),
+        "/animatedWidget": (context) => const AnimatedWidgets(),
+        "/tweenBuilder": (context) => const TweenBuilders(),
+        "/animatedListView": (context) => const AnimatedListView(),
         "/bouncingItem": (context) => const BouncingItem(),
+        "/multipleAnimations": (context) => const MultipleAnimations(),
       },
     );
   }

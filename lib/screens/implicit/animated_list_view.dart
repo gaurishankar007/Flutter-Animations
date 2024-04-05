@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 
-class ListViewAnimation extends StatefulWidget {
-  const ListViewAnimation({super.key});
+class AnimatedListView extends StatefulWidget {
+  const AnimatedListView({super.key});
 
   @override
-  State<ListViewAnimation> createState() => _ListViewAnimationState();
+  State<AnimatedListView> createState() => _AnimatedListViewState();
 }
 
-class _ListViewAnimationState extends State<ListViewAnimation> {
+class _AnimatedListViewState extends State<AnimatedListView> {
   GlobalKey<AnimatedListState> key = GlobalKey<AnimatedListState>();
 
   Tween<Offset> tween = Tween<Offset>(
@@ -53,4 +53,3 @@ class _ListViewAnimationState extends State<ListViewAnimation> {
     );
   }
 }
-
