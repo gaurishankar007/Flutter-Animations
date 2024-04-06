@@ -30,7 +30,7 @@ class Home extends StatelessWidget {
               ),
               const SizedBox(height: 20),
               ElevatedButton(
-                onPressed: () => Navigator.pushNamed(context, "/tweenBuilders"),
+                onPressed: () => Navigator.pushNamed(context, "/tweenBuilder"),
                 child: const Text("Tween Builders"),
               ),
               const SizedBox(height: 20),
@@ -44,6 +44,11 @@ class Home extends StatelessWidget {
                 style: TextStyle(fontWeight: FontWeight.w500, fontSize: 22),
               ),
               const SizedBox(height: 10),
+              ElevatedButton(
+                onPressed: () => Navigator.pushNamed(context, "/transitionAnimation"),
+                child: const Text("Transition Animation"),
+              ),
+              const SizedBox(height: 20),
               ElevatedButton(
                 onPressed: () => Navigator.pushNamed(context, "/bouncingItem"),
                 child: const Text("Bouncing Item"),

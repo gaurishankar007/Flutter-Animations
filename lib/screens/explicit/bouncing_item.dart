@@ -7,8 +7,7 @@ class BouncingItem extends StatefulWidget {
   State<BouncingItem> createState() => _BouncingItemState();
 }
 
-class _BouncingItemState extends State<BouncingItem>
-    with SingleTickerProviderStateMixin {
+class _BouncingItemState extends State<BouncingItem> with SingleTickerProviderStateMixin {
   late AnimationController controller;
   late Animation<Offset> offsetAnimation;
 
@@ -23,7 +22,7 @@ class _BouncingItemState extends State<BouncingItem>
 
     offsetAnimation = Tween<Offset>(
       begin: Offset.zero,
-      end: const Offset(0, 5),
+      end: const Offset(0, 1),
     ).animate(
       CurvedAnimation(
         curve: Curves.elasticIn,
@@ -45,10 +44,13 @@ class _BouncingItemState extends State<BouncingItem>
         child: Center(
           child: SlideTransition(
             position: offsetAnimation,
-            child: const Icon(
-              Icons.flutter_dash_rounded,
-              color: Colors.deepPurple,
-              size: 50,
+            child: SizedBox(
+              height: MediaQuery.of(context).size.height * .5,
+              child: const Icon(
+                Icons.flutter_dash_rounded,
+                color: Colors.deepPurple,
+                size: 50,
+              ),
             ),
           ),
         ),

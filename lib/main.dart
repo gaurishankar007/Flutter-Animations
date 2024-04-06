@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'screens/explicit/bouncing_item.dart';
 import 'screens/explicit/multiple_animations.dart';
+import 'screens/explicit/transitions.dart';
 import 'screens/home.dart';
 import 'screens/implicit/animated_list_view.dart';
 import 'screens/implicit/animated_widgets.dart';
@@ -30,6 +31,7 @@ class MyApp extends StatelessWidget {
         "/animatedWidget": (context) => const AnimatedWidgets(),
         "/tweenBuilder": (context) => const TweenBuilders(),
         "/animatedListView": (context) => const AnimatedListView(),
+        "/transitionAnimation": (context) => const TransitionAnimation(),
         "/bouncingItem": (context) => const BouncingItem(),
         "/multipleAnimations": (context) => const MultipleAnimations(),
       },

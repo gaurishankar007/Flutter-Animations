@@ -17,10 +17,10 @@ class _TweenBuildersState extends State<TweenBuilders> {
           children: [
             TweenAnimationBuilder<double>(
               tween: Tween<double>(begin: 0, end: 1),
-              duration: const Duration(seconds: 1),
+              duration: const Duration(seconds: 2),
               builder: (context, value, child) {
                 return Padding(
-                  padding: EdgeInsets.all(value * 20),
+                  padding: const EdgeInsets.all(20),
                   child: Opacity(
                     opacity: value,
                     child: child,
@@ -29,10 +29,10 @@ class _TweenBuildersState extends State<TweenBuilders> {
               },
               child: const Text(
                 "Hello world!",
-                style: TextStyle(fontSize: 20, fontWeight: FontWeight.w500),
+                style: TextStyle(fontSize: 25, fontWeight: FontWeight.w500),
               ),
             ),
-            const SizedBox(height: 20),
+            const SizedBox(height: 20, width: double.maxFinite),
             TweenAnimationBuilder<Duration>(
               duration: const Duration(minutes: 3),
               tween: Tween(
