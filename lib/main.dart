@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
+
 import 'screens/explicit/bouncing_item.dart';
 import 'screens/explicit/multiple_animations.dart';
 import 'screens/explicit/transitions.dart';
 import 'screens/home.dart';
 import 'screens/implicit/animated_list_view.dart';
 import 'screens/implicit/animated_widgets.dart';
+import 'screens/implicit/hero_animations.dart';
 import 'screens/implicit/ticker_animation.dart';
 import 'screens/implicit/tween_builders.dart';
 
@@ -30,6 +32,7 @@ class MyApp extends StatelessWidget {
         "/ticker": (context) => const TickerAnimation(),
         "/animatedWidget": (context) => const AnimatedWidgets(),
         "/tweenBuilder": (context) => const TweenBuilders(),
+        "/heroAnimation": (context) => const HeroAnimation(),
         "/animatedListView": (context) => const AnimatedListView(),
         "/transitionAnimation": (context) => const TransitionAnimation(),
         "/bouncingItem": (context) => const BouncingItem(),

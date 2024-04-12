@@ -35,6 +35,11 @@ class Home extends StatelessWidget {
               ),
               const SizedBox(height: 20),
               ElevatedButton(
+                onPressed: () => Navigator.pushNamed(context, "/heroAnimation"),
+                child: const Text("Hero Animation"),
+              ),
+              const SizedBox(height: 20),
+              ElevatedButton(
                 onPressed: () => Navigator.pushNamed(context, "/animatedListView"),
                 child: const Text("List View Animations"),
               ),

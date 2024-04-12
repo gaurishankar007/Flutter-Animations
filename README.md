@@ -1,16 +1,30 @@
-# flutter_animations
+# Flutter Animations
 
-A new Flutter project.
+A project demonstrating different types of animation in flutter.
+Simple to complex animations and their use cases.
 
-## Getting Started
 
-This project is a starting point for a Flutter application.
+## Animation Builder
 
-A few resources to get you started if this is your first Flutter project:
+- Animated Widget
+- Tween Animation Builder
+- Transition
+  - Slide Transition
+  - Size Transition
+  - Scale Transition
+  - Rotation Transition
+  - Fade Transition
+- Animated Builder
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## Animation Controller
+
+- Ticker and Ticker Provider
+- SingleTickerProviderStateMixin and TickerProviderStateMixin
+- Tween
+- Tween Sequence
+- Curve Tween
+- Curved Animation
+- Animation
+- Always Stopped Animation
+- Animation Controller
