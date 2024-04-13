@@ -13,10 +13,7 @@ class _HomeState extends State<Home> with TickerProviderStateMixin {
   @override
   void initState() {
     super.initState();
-    tabController = TabController(
-      vsync: this,
-      length: 2,
-    );
+    tabController = TabController(vsync: this, length: 2);
   }
 
   @override
@@ -93,6 +90,11 @@ class _HomeState extends State<Home> with TickerProviderStateMixin {
         ElevatedButton(
           onPressed: () => Navigator.pushNamed(context, "/transformRotation"),
           child: const Text("Transform Rotation"),
+        ),
+        const SizedBox(height: 20),
+        ElevatedButton(
+          onPressed: () => Navigator.pushNamed(context, "/transformClipPath"),
+          child: const Text("Transform Clip Path"),
         ),
         const SizedBox(height: 20),
         ElevatedButton(
