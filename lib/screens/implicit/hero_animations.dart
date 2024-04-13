@@ -38,30 +38,34 @@ class _HeroAnimationState extends State<HeroAnimation> {
               itemBuilder: (context, index) {
                 final person = people[index];
 
-                return ListTile(
-                  onTap: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => HeroDetail(person: person),
-                      ),
-                    );
-                  },
-                  leading: Hero(
-                    tag: person.name,
-                    child: Text(
-                      person.emoji,
-                      style: const TextStyle(fontSize: 50),
-                    ),
-                  ),
-                  title: Text(person.name),
-                  subtitle: Text(person.age),
-                );
+                return personDetail(context, person);
               },
             ),
           ],
         ),
       ),
+    );
+  }
+
+  ListTile personDetail(BuildContext context, EmojiPerson person) {
+    return ListTile(
+      onTap: () {
+        Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) => HeroDetail(person: person),
+          ),
+        );
+      },
+      leading: Hero(
+        tag: person.name,
+        child: Text(
+          person.emoji,
+          style: const TextStyle(fontSize: 50),
+        ),
+      ),
+      title: Text(person.name),
+      subtitle: Text(person.age),
     );
   }
 }
@@ -74,47 +78,7 @@ class HeroDetail extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Hero(
-          /// Enables modification on the flying widget
-          flightShuttleBuilder: (
-            flightContext,
-            animation,
-            flightDirection,
-            fromHeroContext,
-            toHeroContext,
-          ) {
-            switch (flightDirection) {
-              case HeroFlightDirection.push:
-                return Material(
-                  color: Colors.transparent,
-                  child: ScaleTransition(
-                    scale: animation.drive(
-                      Tween<double>(
-                        begin: 0,
-                        end: 1,
-                      ).chain(
-                        CurveTween(curve: Curves.fastOutSlowIn),
-                      ),
-                    ),
-                    child: toHeroContext.widget,
-                  ),
-                );
-              case HeroFlightDirection.pop:
-                return Material(
-                  color: Colors.transparent,
-                  child: fromHeroContext.widget,
-                );
-            }
-          },
-          tag: person.name,
-          child: Material(
-            color: Colors.transparent,
-            child: Text(
-              person.emoji,
-              style: const TextStyle(fontSize: 50),
-            ),
-          ),
-        ),
+        title: heroAnimation(),
         centerTitle: true,
       ),
       body: Column(
@@ -129,6 +93,50 @@ class HeroDetail extends StatelessWidget {
             style: const TextStyle(fontSize: 20),
           ),
         ],
+      ),
+    );
+  }
+
+  Hero heroAnimation() {
+    return Hero(
+      /// Enables modification on the flying widget
+      flightShuttleBuilder: (
+        flightContext,
+        animation,
+        flightDirection,
+        fromHeroContext,
+        toHeroContext,
+      ) {
+        switch (flightDirection) {
+          case HeroFlightDirection.push:
+            return Material(
+              color: Colors.transparent,
+              child: ScaleTransition(
+                scale: animation.drive(
+                  Tween<double>(
+                    begin: 0,
+                    end: 1,
+                  ).chain(
+                    CurveTween(curve: Curves.fastOutSlowIn),
+                  ),
+                ),
+                child: toHeroContext.widget,
+              ),
+            );
+          case HeroFlightDirection.pop:
+            return Material(
+              color: Colors.transparent,
+              child: fromHeroContext.widget,
+            );
+        }
+      },
+      tag: person.name,
+      child: Material(
+        color: Colors.transparent,
+        child: Text(
+          person.emoji,
+          style: const TextStyle(fontSize: 50),
+        ),
       ),
     );
   }

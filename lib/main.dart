@@ -20,24 +20,30 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      title: 'Flutter Animations',
       debugShowCheckedModeBanner: false,
-      title: 'Flutter Demo',
+      debugShowMaterialGrid: false,
       theme: ThemeData(
+        brightness: Brightness.dark,
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
       initialRoute: "/",
-      routes: {
-        "/": (context) => const Home(),
-        "/ticker": (context) => const TickerAnimation(),
-        "/animatedWidget": (context) => const AnimatedWidgets(),
-        "/tweenBuilder": (context) => const TweenBuilders(),
-        "/heroAnimation": (context) => const HeroAnimation(),
-        "/animatedListView": (context) => const AnimatedListView(),
-        "/transitionAnimation": (context) => const TransitionAnimation(),
-        "/bouncingItem": (context) => const BouncingItem(),
-        "/multipleAnimations": (context) => const MultipleAnimations(),
-      },
+      routes: routes,
     );
+  }
+
+  Map<String, WidgetBuilder> get routes {
+    return {
+      "/": (context) => const Home(),
+      "/ticker": (context) => const TickerAnimation(),
+      "/animatedWidget": (context) => const AnimatedWidgets(),
+      "/tweenBuilder": (context) => const TweenBuilders(),
+      "/heroAnimation": (context) => const HeroAnimation(),
+      "/animatedListView": (context) => const AnimatedListView(),
+      "/transitionAnimation": (context) => const TransitionAnimation(),
+      "/bouncingItem": (context) => const BouncingItem(),
+      "/multipleAnimations": (context) => const MultipleAnimations(),
+    };
   }
 }
