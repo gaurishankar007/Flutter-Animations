@@ -17,7 +17,7 @@ class _TransformRotationState extends State<TransformRotation> with SingleTicker
     super.initState();
     animationController = AnimationController(
       vsync: this,
-      duration: const Duration(seconds: 1),
+      duration: const Duration(seconds: 2),
     );
     animation = Tween<double>(begin: 0, end: pi * 2).animate(animationController);
     animationController.repeat();

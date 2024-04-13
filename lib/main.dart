@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import 'screens/explicit/bouncing_item.dart';
 import 'screens/explicit/multiple_animations.dart';
+import 'screens/explicit/transform_rotation.dart';
 import 'screens/explicit/transitions.dart';
 import 'screens/home.dart';
 import 'screens/implicit/animated_list_view.dart';
@@ -24,7 +25,6 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       debugShowMaterialGrid: false,
       theme: ThemeData(
-        brightness: Brightness.dark,
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
@@ -42,6 +42,7 @@ class MyApp extends StatelessWidget {
       "/heroAnimation": (context) => const HeroAnimation(),
       "/animatedListView": (context) => const AnimatedListView(),
       "/transitionAnimation": (context) => const TransitionAnimation(),
+      "/transformRotation": (context) => const TransformRotation(),
       "/bouncingItem": (context) => const BouncingItem(),
       "/multipleAnimations": (context) => const MultipleAnimations(),
     };
