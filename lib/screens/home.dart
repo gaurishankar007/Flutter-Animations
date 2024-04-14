@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../main.dart';
+
 class Home extends StatefulWidget {
   const Home({super.key});
 
@@ -35,8 +37,8 @@ class _HomeState extends State<Home> with TickerProviderStateMixin {
               child: TabBarView(
                 controller: tabController,
                 children: [
-                  implicitAnimations(context),
-                  explicitAnimations(context),
+                  implicitAnimationListView(context),
+                  explicitAnimationListView(context),
                 ],
               ),
             ),
@@ -46,72 +48,39 @@ class _HomeState extends State<Home> with TickerProviderStateMixin {
     );
   }
 
-  Column implicitAnimations(BuildContext context) {
-    return Column(
-      mainAxisSize: MainAxisSize.min,
-      children: [
-        ElevatedButton(
-          onPressed: () => Navigator.pushNamed(context, "/animatedWidget"),
-          child: const Text("Animated Widget"),
-        ),
-        const SizedBox(height: 20),
-        ElevatedButton(
-          onPressed: () => Navigator.pushNamed(context, "/tweenBuilder"),
-          child: const Text("Tween Builders"),
-        ),
-        const SizedBox(height: 20),
-        ElevatedButton(
-          onPressed: () => Navigator.pushNamed(context, "/heroAnimation"),
-          child: const Text("Hero Animation"),
-        ),
-        const SizedBox(height: 20),
-        ElevatedButton(
-          onPressed: () => Navigator.pushNamed(context, "/animatedListView"),
-          child: const Text("List View Animations"),
-        ),
-      ],
+  ListView implicitAnimationListView(BuildContext context) {
+    return ListView.separated(
+      itemCount: implicitAnimations.length,
+      separatorBuilder: (context, index) => const SizedBox(height: 20),
+      itemBuilder: (context, index) {
+        String path = implicitAnimations.keys.elementAt(index);
+        String title = path.split("/").last;
+
+        return ListTile(
+          onTap: () => Navigator.pushNamed(context, path),
+          visualDensity: const VisualDensity(vertical: -4, horizontal: -4),
+          title: Text(title),
+          trailing: const Icon(Icons.arrow_forward_ios, size: 16),
+        );
+      },
     );
   }
 
-  Column explicitAnimations(BuildContext context) {
-    return Column(
-      mainAxisSize: MainAxisSize.min,
-      children: [
-        ElevatedButton(
-          onPressed: () => Navigator.pushNamed(context, "/ticker"),
-          child: const Text("Ticker Animation"),
-        ),
-        const SizedBox(height: 20),
-        ElevatedButton(
-          onPressed: () => Navigator.pushNamed(context, "/transitionAnimation"),
-          child: const Text("Transition Animation"),
-        ),
-        const SizedBox(height: 20),
-        ElevatedButton(
-          onPressed: () => Navigator.pushNamed(context, "/transformRotation"),
-          child: const Text("Transform Rotation"),
-        ),
-        const SizedBox(height: 20),
-        ElevatedButton(
-          onPressed: () => Navigator.pushNamed(context, "/transformClipPath"),
-          child: const Text("Transform Clip Path"),
-        ),
-        const SizedBox(height: 20),
-        ElevatedButton(
-          onPressed: () => Navigator.pushNamed(context, "/cube3D"),
-          child: const Text("3D Cube"),
-        ),
-        const SizedBox(height: 20),
-        ElevatedButton(
-          onPressed: () => Navigator.pushNamed(context, "/bouncingItem"),
-          child: const Text("Bouncing Item"),
-        ),
-        const SizedBox(height: 20),
-        ElevatedButton(
-          onPressed: () => Navigator.pushNamed(context, "/multipleAnimations"),
-          child: const Text("Multiple Animations"),
-        ),
-      ],
+  ListView explicitAnimationListView(BuildContext context) {
+    return ListView.separated(
+      itemCount: explicitAnimations.length,
+      separatorBuilder: (context, index) => const SizedBox(height: 20),
+      itemBuilder: (context, index) {
+        String path = explicitAnimations.keys.elementAt(index);
+        String title = path.split("/").last;
+
+        return ListTile(
+          onTap: () => Navigator.pushNamed(context, path),
+          visualDensity: const VisualDensity(vertical: -4, horizontal: -4),
+          title: Text(title),
+          trailing: const Icon(Icons.arrow_forward_ios, size: 16),
+        );
+      },
     );
   }
 }

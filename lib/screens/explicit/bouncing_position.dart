@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 
-class BouncingItem extends StatefulWidget {
-  const BouncingItem({super.key});
+class BouncingPosition extends StatefulWidget {
+  const BouncingPosition({super.key});
 
   @override
-  State<BouncingItem> createState() => _BouncingItemState();
+  State<BouncingPosition> createState() => _BouncingPositionState();
 }
 
-class _BouncingItemState extends State<BouncingItem> with SingleTickerProviderStateMixin {
+class _BouncingPositionState extends State<BouncingPosition> with SingleTickerProviderStateMixin {
   late AnimationController controller;
   late Animation<Offset> offsetAnimation;
 

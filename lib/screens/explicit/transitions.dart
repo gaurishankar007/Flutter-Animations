@@ -56,7 +56,7 @@ class _TransitionAnimationState extends State<TransitionAnimation>
       end: 1,
     ).animate(CurvedAnimation(
       parent: animationController,
-      curve: Curves.bounceIn,
+      curve: Curves.bounceOut,
     ));
   }
 

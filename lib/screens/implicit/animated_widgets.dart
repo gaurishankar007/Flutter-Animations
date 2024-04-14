@@ -22,6 +22,7 @@ class _AnimatedWidgetsState extends State<AnimatedWidgets> {
             const SizedBox(height: 10, width: double.maxFinite),
             AnimatedContainer(
               duration: const Duration(seconds: 1),
+              curve: Curves.bounceOut,
               width: width,
               height: 200,
               decoration: BoxDecoration(

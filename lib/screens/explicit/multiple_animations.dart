@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 
-class MultipleAnimations extends StatefulWidget {
-  const MultipleAnimations({super.key});
+class BouncingSize extends StatefulWidget {
+  const BouncingSize({super.key});
 
   @override
-  State<MultipleAnimations> createState() => _MultipleAnimationsState();
+  State<BouncingSize> createState() => _BouncingSizeState();
 }
 
-class _MultipleAnimationsState extends State<MultipleAnimations> with TickerProviderStateMixin {
+class _BouncingSizeState extends State<BouncingSize> with TickerProviderStateMixin {
   late final AnimationController slideController;
   late final AnimationController colorSizeController;
   late final Animation<Offset> offsetAnimation;

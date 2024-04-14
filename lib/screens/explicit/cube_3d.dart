@@ -77,6 +77,9 @@ class _Cube3DState extends State<Cube3D> with TickerProviderStateMixin {
                 return Transform(
                   alignment: Alignment.center,
                   // Rotating in all axis
+                  // Tween evaluate gives the value from the given animation/controller
+                  // That means tween does no have to animate and return value
+                  // It evaluate directly does that
                   transform: Matrix4.identity()
                     ..rotateX(tween.evaluate(xController))
                     ..rotateY(tween.evaluate(yController))

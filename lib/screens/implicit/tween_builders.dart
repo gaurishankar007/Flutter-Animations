@@ -1,4 +1,10 @@
+import 'dart:math';
+
 import 'package:flutter/material.dart';
+
+import '../../core/clipper/circle_clipper.dart';
+
+Color getRandomColor() => Color(0xFF000000 + Random().nextInt(0x00FFFFFF));
 
 class TweenBuilders extends StatefulWidget {
   const TweenBuilders({super.key});
@@ -8,6 +14,9 @@ class TweenBuilders extends StatefulWidget {
 }
 
 class _TweenBuildersState extends State<TweenBuilders> {
+  final double size = 200;
+  Color color = getRandomColor();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -56,6 +65,34 @@ class _TweenBuildersState extends State<TweenBuilders> {
                       fontSize: 30,
                     ),
                   ),
+                );
+              },
+            ),
+            const SizedBox(height: 20),
+            TweenAnimationBuilder(
+              // It remembers the previous end color
+              // And begins with that color after calling set state
+              tween: ColorTween(
+                begin: getRandomColor(),
+                end: color,
+              ),
+              onEnd: () => setState(() => color = getRandomColor()),
+              duration: const Duration(seconds: 1),
+              child: ClipPath(
+                clipper: const CircleClipper(),
+                child: Container(
+                  height: size,
+                  width: size,
+                  color: Colors.red,
+                ),
+              ),
+              builder: (context, color, child) {
+                return ColorFiltered(
+                  colorFilter: ColorFilter.mode(
+                    color!,
+                    BlendMode.srcATop,
+                  ),
+                  child: child,
                 );
               },
             ),
