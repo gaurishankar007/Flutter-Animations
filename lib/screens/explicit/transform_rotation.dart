@@ -17,9 +17,12 @@ class _TransformRotationState extends State<TransformRotation> with SingleTicker
     super.initState();
     animationController = AnimationController(
       vsync: this,
-      duration: const Duration(seconds: 2),
+      duration: const Duration(seconds: 5),
     );
-    animation = Tween<double>(begin: 0, end: pi * 2).animate(animationController);
+    animation = Tween<double>(
+      begin: 0,
+      end: pi * 2,
+    ).animate(animationController);
     animationController.repeat();
   }
 
@@ -51,7 +54,9 @@ class _TransformRotationState extends State<TransformRotation> with SingleTicker
                   width: 100,
                   decoration: BoxDecoration(
                     color: Colors.deepPurple,
-                    borderRadius: BorderRadius.circular(10),
+                    borderRadius: const BorderRadius.horizontal(
+                      left: Radius.circular(10),
+                    ),
                     boxShadow: [
                       BoxShadow(
                         color: Colors.black.withOpacity(.1),

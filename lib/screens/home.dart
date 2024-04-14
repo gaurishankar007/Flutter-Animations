@@ -51,11 +51,6 @@ class _HomeState extends State<Home> with TickerProviderStateMixin {
       mainAxisSize: MainAxisSize.min,
       children: [
         ElevatedButton(
-          onPressed: () => Navigator.pushNamed(context, "/ticker"),
-          child: const Text("Ticker Animation"),
-        ),
-        const SizedBox(height: 20),
-        ElevatedButton(
           onPressed: () => Navigator.pushNamed(context, "/animatedWidget"),
           child: const Text("Animated Widget"),
         ),
@@ -83,6 +78,11 @@ class _HomeState extends State<Home> with TickerProviderStateMixin {
       mainAxisSize: MainAxisSize.min,
       children: [
         ElevatedButton(
+          onPressed: () => Navigator.pushNamed(context, "/ticker"),
+          child: const Text("Ticker Animation"),
+        ),
+        const SizedBox(height: 20),
+        ElevatedButton(
           onPressed: () => Navigator.pushNamed(context, "/transitionAnimation"),
           child: const Text("Transition Animation"),
         ),
@@ -95,6 +95,11 @@ class _HomeState extends State<Home> with TickerProviderStateMixin {
         ElevatedButton(
           onPressed: () => Navigator.pushNamed(context, "/transformClipPath"),
           child: const Text("Transform Clip Path"),
+        ),
+        const SizedBox(height: 20),
+        ElevatedButton(
+          onPressed: () => Navigator.pushNamed(context, "/cube3D"),
+          child: const Text("3D Cube"),
         ),
         const SizedBox(height: 20),
         ElevatedButton(

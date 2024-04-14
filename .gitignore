@@ -42,3 +42,7 @@ app.*.map.json
 /android/app/debug
 /android/app/profile
 /android/app/release
+
+/lib/screens/explicit/slidable_drawer
+/lib/screens/explicit/sliding_drawer
+/lib/screens/explicit/sticky_app_bar.dart

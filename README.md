@@ -22,6 +22,7 @@ Simple to complex animations and their use cases.
 - Ticker and Ticker Provider
 - SingleTickerProviderStateMixin and TickerProviderStateMixin
 - Tween
+- Color Tween
 - Tween Sequence
 - Curve Tween
 - Curved Animation

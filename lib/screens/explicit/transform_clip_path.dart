@@ -110,7 +110,7 @@ class _TransformClipPathState extends State<TransformClipPath> with TickerProvid
     /// Rotation Animation Status Listener
     counterClockwiseRotationController.addStatusListener((status) {
       if (status == AnimationStatus.completed) {
-        /// Setting continuous flow
+        /// Setting continuous flow of animation
         flipAnimation = Tween<double>(
           begin: flipAnimation.value,
           end: flipAnimation.value + pi,
@@ -121,7 +121,7 @@ class _TransformClipPathState extends State<TransformClipPath> with TickerProvid
           ),
         );
 
-        /// Reset Flip Animation
+        /// Reset flip animation
         flipController
           ..reset()
           ..forward();
@@ -131,7 +131,7 @@ class _TransformClipPathState extends State<TransformClipPath> with TickerProvid
     /// Flip Animation Status Listener
     flipController.addStatusListener((status) {
       if (status == AnimationStatus.completed) {
-        /// Setting continuous flow
+        /// Setting continuous flow of animation
         counterClockwiseAnimation = Tween<double>(
           begin: counterClockwiseAnimation.value,
           end: counterClockwiseAnimation.value + -pi / 2,
@@ -142,7 +142,7 @@ class _TransformClipPathState extends State<TransformClipPath> with TickerProvid
           ),
         );
 
-        /// Reset Counter ClockWise Animation
+        /// Reset Counter clockWise animation
         counterClockwiseRotationController
           ..reset()
           ..forward();
@@ -177,6 +177,7 @@ class _TransformClipPathState extends State<TransformClipPath> with TickerProvid
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
+                  const SizedBox(height: 100),
                   leftSideHalfCircle(),
                   rightSideHalfCircle(),
                 ],

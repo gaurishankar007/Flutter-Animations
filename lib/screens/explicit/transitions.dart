@@ -7,7 +7,8 @@ class TransitionAnimation extends StatefulWidget {
   State<TransitionAnimation> createState() => _TransitionAnimationState();
 }
 
-class _TransitionAnimationState extends State<TransitionAnimation> with TickerProviderStateMixin {
+class _TransitionAnimationState extends State<TransitionAnimation>
+    with SingleTickerProviderStateMixin {
   late final AnimationController animationController;
 
   late final Animation<Offset> slideAnimation;
@@ -33,9 +34,14 @@ class _TransitionAnimationState extends State<TransitionAnimation> with TickerPr
         curve: Curves.slowMiddle,
       ),
     );
-    sizeAnimation = CurvedAnimation(
-      parent: animationController,
-      curve: Curves.easeInOut,
+    sizeAnimation = Tween<double>(
+      begin: .1,
+      end: 1,
+    ).animate(
+      CurvedAnimation(
+        parent: animationController,
+        curve: Curves.easeInOut,
+      ),
     );
     fadeAnimation = Tween<double>(
       begin: 0,
