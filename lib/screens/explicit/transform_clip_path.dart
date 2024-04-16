@@ -144,8 +144,24 @@ class _TransformClipPathState extends State<TransformClipPath> with TickerProvid
     return AnimatedBuilder(
       animation: flipController,
       builder: (context, child) {
+        /*
+          Transform.rotate(
+            angle: pi/2,
+            child: MyChild(),
+          ),
+          Transform.scale(
+            scale: 2,
+            child: MyIcon(),
+          ),
+          Transform.translate(
+            offset: Offset(100, 100),
+            child: MyIcon(),
+          ),
+        */
+
         return Transform(
           alignment: Alignment.centerLeft,
+          // Using matrix4.identity() to provide 3d perspective
           transform: Matrix4.identity()..rotateY(flipAnimation.value),
           child: ClipPath(
             clipper: const HalfCircleClipper(side: CircleSide.right),

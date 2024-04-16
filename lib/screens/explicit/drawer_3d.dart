@@ -138,6 +138,17 @@ class _Drawer3DWidgetState extends State<Drawer3DWidget> with TickerProviderStat
                 color: const Color(0xFF1A1B26),
               ),
               Transform(
+                alignment: Alignment.centerLeft,
+                transform: Matrix4.identity()
+                  // Setting perspective for 3D effect
+                  ..setEntry(3, 2, 0.001)
+                  // Moving child towards x axis
+                  ..translate(xControllerForChild.value * maxDragWidth)
+                  // Rotating child based on y axis
+                  ..rotateY(yRotationAnimationForChild.value),
+                child: widget.childBuilder(context),
+              ),
+              Transform(
                 alignment: Alignment.centerRight,
                 transform: Matrix4.identity()
                   ..setEntry(3, 2, 0.001)
@@ -145,17 +156,6 @@ class _Drawer3DWidgetState extends State<Drawer3DWidget> with TickerProviderStat
                   ..translate(-screenWidth + xControllerForDrawer.value * maxDragWidth)
                   ..rotateY(yRotationAnimationForDrawer.value),
                 child: widget.drawerBuilder(context),
-              ),
-              Transform(
-                alignment: Alignment.centerLeft,
-                transform: Matrix4.identity()
-                  // Setting perspective
-                  ..setEntry(3, 2, 0.001)
-                  // Moving child towards x axis
-                  ..translate(xControllerForChild.value * maxDragWidth)
-                  // Rotating child based on y axis
-                  ..rotateY(yRotationAnimationForChild.value),
-                child: widget.childBuilder(context),
               ),
             ],
           );
