@@ -3,34 +3,34 @@
 A project demonstrating different types of animation in flutter.
 Simple to complex animations and their use cases.
 
+## Builder
 
-## Animation Builder
-
-- Animated Widget
-- Tween Animation Builder
-- Transition
+- `Animated Widget`
+- `Tween Animation Builder`
+- `Transition`
   - Slide Transition
   - Size Transition
   - Scale Transition
   - Rotation Transition
   - Fade Transition
-- Animated Builder
+- `Animated Builder`
 
+## Controller
 
-## Animation Controller
-
-- Ticker and Ticker Provider
-- SingleTickerProviderStateMixin and TickerProviderStateMixin
-- Tween <T extends Object?>
+- `Ticker`
+- `Ticker Provider`
+- `Single Ticker Provider State Mixin`
+- `Ticker Provider State Mixin`
+- `Animation Controller`
+- `Tween <T extends Object?>`
   - Color Tween
   - Rect Tween
   - Int Tween
   - Size Tween
   - Reverse Tween
   - Step Tween
-- Tween Sequence
-- Curve Tween
-- Curved Animation
-- Animation
-- Always Stopped Animation
-- Animation Controller
+  - Tween Sequence
+- `Curve Tween`
+- `Curved Animation`
+- `Animation`
+- `Always Stopped Animation`
