@@ -3,29 +3,37 @@ workflows:
     name: Android Workflow
     instance_type: mac_mini_m1
     max_build_duration: 120
+
     environment:
       flutter: stable
+
     scripts:
       - name: Set up local.properties
         script: |
           echo "flutter.sdk=$HOME/programs/flutter" > "$CM_BUILD_DIR/android/local.properties"
+
       - name: Get Flutter packages
         script: |
           flutter packages pub get
+
       - name: Flutter analyze # The flutter analyze command works by checking your Dart code against a set of lint rules defined in an analysis options file
         script: |
           flutter analyze
+
       - name: Flutter unit tests
         script: |
           flutter test
         ignore_failure: false
+
       - name: Build AAB with Flutter
         script: |
           flutter build appbundle --release
+
     artifacts: # Artifacts refers to the outcome of the software build and packaging process
       - build/**/outputs/**/*.aab
       - build/**/outputs/**/mapping.txt
       - flutter_drive.log
+
     publishing:
       email:
         recipients:
@@ -58,9 +66,9 @@ workflows:
           flutter test
         ignore_failure: false
       - name: Flutter build ipa
-        # To build an unsigned .app version for debug, replace the build command with: `flutter build ios --debug --no-codesign`
+        # To build an unsigned .app version, use `--no-codesign`
         script: |
-          flutter build ios --debug --no-codesign
+          flutter build ios ipa --no-codesign
     artifacts:
       - build/ios/ipa/*.ipa
       - /tmp/xcodebuild_logs/*.log
