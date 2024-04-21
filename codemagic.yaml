@@ -1,6 +1,6 @@
 workflows:
   android-workflow:
-    name: Android Test Workflow
+    name: Android Workflow
     instance_type: mac_mini_m1
     max_build_duration: 120
     environment:
@@ -35,7 +35,7 @@ workflows:
           failure: false
 
   ios-workflow:
-    name: Android Test Workflow
+    name: IOS Workflow
     instance_type: mac_mini_m1
     max_build_duration: 120
     environment:
