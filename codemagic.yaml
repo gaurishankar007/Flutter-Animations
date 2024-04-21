@@ -15,16 +15,16 @@ workflows:
       - name: Get Flutter packages
         script: |
           flutter packages pub get
-
+      
       - name: Flutter analyze # The flutter analyze command works by checking your Dart code against a set of lint rules defined in an analysis options file
         script: |
           flutter analyze
-
+      
       - name: Flutter unit tests
         script: |
           flutter test
         ignore_failure: false
-
+      
       - name: Build AAB with Flutter
         script: |
           flutter build appbundle --release
@@ -66,11 +66,11 @@ workflows:
           flutter test
         ignore_failure: false
       - name: Flutter build ipa
-        # To build an unsigned .app version, use `--no-codesign`
+        # To build an unsigned .app version for debug, replace the build command with: `flutter build ios --debug --no-codesign`
         script: |
-          flutter build ios ipa --no-codesign
+          flutter build ios --debug --no-codesign
     artifacts:
-      - build/ios/ipa/*.ipa
+      - build/ios/debug/*.debug
       - /tmp/xcodebuild_logs/*.log
       - flutter_drive.log
     publishing:
