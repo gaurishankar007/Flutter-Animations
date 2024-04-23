@@ -116,7 +116,7 @@ class AnimatedToast extends StatelessWidget {
                     showReverseAnimation: false,
                     showProgressBar: false,
                     toastStartPosition: ToastPosition.left,
-                    toastAlignment: Alignment.centerRight,
+                    toastAlignment: Alignment.center,
                   ),
                   toastStyle: ToastStyle(
                     backgroundColor: Colors.blueAccent,
