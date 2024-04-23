@@ -1,9 +1,9 @@
 name: "Flutter Test, Build & Release"
 
 on:
-  push:
-    branches:
-      - master
+  # push:
+  #   branches:
+  #     - master
   pull_request:
     branches:
       - master

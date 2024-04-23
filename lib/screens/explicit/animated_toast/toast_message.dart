@@ -89,7 +89,7 @@ class ToastMessage {
       toastSetting: toastSetting,
       toastStyle: toastStyle.copyWith(
         boxShadow: BoxShadow(
-          color: Colors.red.withOpacity(.2),
+          color: Colors.red.withOpacity(.1),
           blurRadius: 5,
           spreadRadius: 3,
           offset: const Offset(2, 2),

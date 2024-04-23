@@ -31,25 +31,28 @@ class ToastPositionWidget extends StatelessWidget {
     if ((maxHeight ?? 0) > newMaxHeight) newMaxHeight = maxHeight!;
     if ((maxWidth ?? 0) > newMaxWidth) newMaxWidth = maxWidth!;
 
-    return Align(
-      alignment: alignment,
-      child: Padding(
-        padding: padding,
-        // Wrapping with the material so that it will adapt material design
-        // Otherwise, the widget will look bulky/horrible
-        child: Material(
-          // Providing transparent color to make the toast background transparent
-          // when dismissed by the user, otherwise the background will be white
-          // and the toast behind it will not be visible while dismissing by sliding the toast
-          color: Colors.transparent,
-          child: ConstrainedBox(
-            constraints: BoxConstraints(
-              minHeight: minHeight,
-              minWidth: minWidth,
-              maxHeight: newMaxHeight,
-              maxWidth: newMaxWidth,
+    // SafeArea is used to avoid the status bar and the bottom navigation bar of the device
+    return SafeArea(
+      child: Align(
+        alignment: alignment,
+        child: Padding(
+          padding: padding,
+          // Wrapping with the material so that it will adapt material design
+          // Otherwise, the widget will look bulky/horrible
+          child: Material(
+            // Providing transparent color to make the toast background transparent
+            // when dismissed by the user, otherwise the background will be white
+            // and the toast behind it will not be visible while dismissing by sliding the toast
+            color: Colors.transparent,
+            child: ConstrainedBox(
+              constraints: BoxConstraints(
+                minHeight: minHeight,
+                minWidth: minWidth,
+                maxHeight: newMaxHeight,
+                maxWidth: newMaxWidth,
+              ),
+              child: child,
             ),
-            child: child,
           ),
         ),
       ),
