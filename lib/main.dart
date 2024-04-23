@@ -34,9 +34,8 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      // initialRoute: "/",
-      // routes: routes,
-      home: const AnimatedToast(),
+      initialRoute: "/",
+      routes: routes,
     );
   }
 }
