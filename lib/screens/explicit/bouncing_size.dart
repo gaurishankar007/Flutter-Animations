@@ -56,6 +56,7 @@ class _BouncingSizeState extends State<BouncingSize> with TickerProviderStateMix
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(title: const Text("Bouncing Size")),
       body: SafeArea(
         child: Center(
           child: AnimatedBuilder(

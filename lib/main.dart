@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
 
 import 'screens/explicit/animated_prompt.dart';
+import 'screens/explicit/animated_toast.dart';
 import 'screens/explicit/animation_polygon.dart';
 import 'screens/explicit/bouncing_position.dart';
+import 'screens/explicit/bouncing_size.dart';
 import 'screens/explicit/cube_3d.dart';
 import 'screens/explicit/drawer_3d.dart';
-import 'screens/explicit/multiple_animations.dart';
 import 'screens/explicit/ticker_animation.dart';
 import 'screens/explicit/transform_clip_path.dart';
 import 'screens/explicit/transform_rotation.dart';
@@ -33,8 +34,9 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      initialRoute: "/",
-      routes: routes,
+      // initialRoute: "/",
+      // routes: routes,
+      home: const AnimatedToast(),
     );
   }
 }
@@ -68,5 +70,6 @@ Map<String, WidgetBuilder> get explicitAnimations {
     "/Animation With Polygon": (context) => const AnimationWithPolygon(),
     "/Drawer 3D": (context) => const Drawer3D(),
     "/Animated Prompt": (context) => const AnimatedPrompt(),
+    "/Animated Toast": (context) => const AnimatedToast(),
   };
 }

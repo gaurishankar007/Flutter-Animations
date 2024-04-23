@@ -65,7 +65,7 @@ workflows:
         script: |
           flutter test
         ignore_failure: false
-      - name: Flutter build ipa
+      - name: Flutter build debug
         # To build an unsigned .app version for debug, replace the build command with: `flutter build ios --debug --no-codesign`
         script: |
           flutter build ios --debug --no-codesign
