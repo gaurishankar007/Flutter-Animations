@@ -29,6 +29,15 @@ class _AnimatedListViewState extends State<AnimatedListView> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        iconTheme: const IconThemeData(color: Colors.white),
+        backgroundColor: Colors.deepPurple,
+        title: const Text(
+          "Animated List View",
+          style: TextStyle(color: Colors.white),
+        ),
+        centerTitle: true,
+      ),
       body: SafeArea(
         child: AnimatedList(
           key: key,

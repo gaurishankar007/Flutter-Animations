@@ -63,6 +63,15 @@ class _Cube3DState extends State<Cube3D> with TickerProviderStateMixin {
       ..forward();
 
     return Scaffold(
+      appBar: AppBar(
+        iconTheme: const IconThemeData(color: Colors.white),
+        backgroundColor: Colors.deepPurple,
+        title: const Text(
+          "3D Cube",
+          style: TextStyle(color: Colors.white),
+        ),
+        centerTitle: true,
+      ),
       body: SafeArea(
         child: Column(
           children: [

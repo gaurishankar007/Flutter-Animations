@@ -40,6 +40,15 @@ class _BouncingPositionState extends State<BouncingPosition> with SingleTickerPr
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        iconTheme: const IconThemeData(color: Colors.white),
+        backgroundColor: Colors.deepPurple,
+        title: const Text(
+          "Bouncing Position",
+          style: TextStyle(color: Colors.white),
+        ),
+        centerTitle: true,
+      ),
       body: SafeArea(
         child: Center(
           child: SlideTransition(

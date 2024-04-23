@@ -43,7 +43,13 @@ class _TickerAnimationState extends State<TickerAnimation> with SingleTickerProv
 
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Tickers Animation"),
+        iconTheme: const IconThemeData(color: Colors.white),
+        backgroundColor: Colors.deepPurple,
+        title: const Text(
+          "Ticker Animation",
+          style: TextStyle(color: Colors.white),
+        ),
+        centerTitle: true,
       ),
       body: SafeArea(
         child: Column(

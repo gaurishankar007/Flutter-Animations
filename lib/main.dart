@@ -64,7 +64,7 @@ Map<String, WidgetBuilder> get explicitAnimations {
     "/Bouncing Position": (context) => const BouncingPosition(),
     "/Bouncing Size": (context) => const BouncingSize(),
     "/Transform Rotation": (context) => const TransformRotation(),
-    "/Transform ClipPath": (context) => const TransformClipPath(),
+    "/Transform Clip Path": (context) => const TransformClipPath(),
     "/Cube 3D": (context) => const Cube3D(),
     "/Animation With Polygon": (context) => const AnimationWithPolygon(),
     "/Drawer 3D": (context) => const Drawer3D(),

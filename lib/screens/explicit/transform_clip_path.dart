@@ -118,23 +118,37 @@ class _TransformClipPathState extends State<TransformClipPath> with TickerProvid
       ..forward.delaySecond();
 
     return Scaffold(
+      appBar: AppBar(
+        iconTheme: const IconThemeData(color: Colors.white),
+        backgroundColor: Colors.deepPurple,
+        title: const Text(
+          "Transform And Clip Path",
+          style: TextStyle(color: Colors.white),
+        ),
+        centerTitle: true,
+      ),
       body: SafeArea(
-        child: AnimatedBuilder(
-          animation: counterClockwiseRotationController,
-          builder: (context, child) {
-            return Transform(
-              alignment: Alignment.center,
-              transform: Matrix4.identity()..rotateZ(counterClockwiseAnimation.value),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  const SizedBox(height: 100),
-                  leftSideHalfCircle(),
-                  rightSideHalfCircle(),
-                ],
-              ),
-            );
-          },
+        child: Column(
+          children: [
+            const SizedBox(height: 100),
+            AnimatedBuilder(
+              animation: counterClockwiseRotationController,
+              builder: (context, child) {
+                return Transform(
+                  alignment: Alignment.center,
+                  transform: Matrix4.identity()..rotateZ(counterClockwiseAnimation.value),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      const SizedBox(height: 100),
+                      leftSideHalfCircle(),
+                      rightSideHalfCircle(),
+                    ],
+                  ),
+                );
+              },
+            ),
+          ],
         ),
       ),
     );

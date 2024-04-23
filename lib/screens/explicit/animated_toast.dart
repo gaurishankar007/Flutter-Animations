@@ -10,6 +10,15 @@ class AnimatedToast extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        iconTheme: const IconThemeData(color: Colors.white),
+        backgroundColor: Colors.deepPurple,
+        title: const Text(
+          "Animated Toast",
+          style: TextStyle(color: Colors.white),
+        ),
+        centerTitle: true,
+      ),
       body: SafeArea(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -20,7 +29,7 @@ class AnimatedToast extends StatelessWidget {
                 ToastMessage.show(
                   context,
                   title: const Text(
-                    "Hi there! I'm a simple toast 😎. Dismiss me by sliding towards downward.",
+                    "Hi there! I'm a simple toast 😎. Dismiss me by sliding downward.",
                     style: TextStyle(),
                   ),
                   trailing: const Icon(Icons.person, color: Colors.deepPurple),

@@ -36,7 +36,7 @@ class Drawer3D extends StatelessWidget {
             backgroundColor: Colors.deepPurple,
             iconTheme: const IconThemeData(color: Colors.white),
             title: const Text(
-              "Drawer",
+              "3D Drawer",
               style: TextStyle(color: Colors.white),
             ),
             centerTitle: true,
