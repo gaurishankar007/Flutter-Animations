@@ -1,22 +1,31 @@
 import 'package:flutter/material.dart';
 
+import '../toast_setting.dart';
+import '../toast_style.dart';
+
 class ToastProgressBarWidget extends StatelessWidget {
   final Animation<double> animation;
-  final Color color;
+  final ToastStyle toastStyle;
+  final ToastSetting toastSetting;
 
   /// A progress bar to show the remaining time left to dismiss the toast
   const ToastProgressBarWidget({
     super.key,
     required this.animation,
-    required this.color,
+    required this.toastStyle,
+    required this.toastSetting,
   });
 
   @override
   Widget build(BuildContext context) {
+    Color color = toastStyle.progressBarColor ?? Theme.of(context).primaryColor;
+    double height = toastSetting.progressBarHeight;
+    height = height.clamp(2, 8);
+
     // Defining the height of the size transition
     // Otherwise it will take available height (maxHeight)
     return SizedBox(
-      height: 5,
+      height: height,
       child: SizeTransition(
         sizeFactor: animation,
         axis: Axis.horizontal,
@@ -27,7 +36,7 @@ class ToastProgressBarWidget extends StatelessWidget {
             gradient: LinearGradient(
               colors: [
                 color,
-                color.withOpacity(0.8),
+                color.withOpacity(0.7),
                 color.withOpacity(0.4),
               ],
             ),

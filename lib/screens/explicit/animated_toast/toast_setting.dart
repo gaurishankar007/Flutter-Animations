@@ -28,6 +28,11 @@ class ToastSetting {
   /// Default is [true]
   final bool showReverseAnimation;
 
+  /// The height of the progress bar.
+  /// Default is [3]
+  /// ProgressBar height constraint is (max: 8, min:2)
+  final double progressBarHeight;
+
   /// Whether to show the progress bar or not.
   /// Default is [true]
   final bool showProgressBar;
@@ -57,6 +62,7 @@ class ToastSetting {
     this.displayDuration = const Duration(seconds: 1),
     this.showReverseAnimation = true,
     this.showProgressBar = true,
+    this.progressBarHeight = 3,
     this.toastStartPosition = ToastPosition.bottom,
     this.toastAlignment = Alignment.bottomCenter,
     this.padding = const EdgeInsets.all(10),

@@ -16,10 +16,6 @@ class ToastSlider extends StatefulWidget {
   /// The icon to display at the right side of the toast
   final Widget? trailing;
 
-  /// The color of the progress bar.
-  /// Default is [Theme.of(context).primaryColor]
-  final Color? progressBarColor;
-
   /// The setting for the sliding animation
   final ToastSetting toastSetting;
 
@@ -32,7 +28,6 @@ class ToastSlider extends StatefulWidget {
     required this.overlayEntry,
     required this.title,
     required this.trailing,
-    required this.progressBarColor,
     required this.toastSetting,
     required this.toastStyle,
   });
@@ -43,6 +38,7 @@ class ToastSlider extends StatefulWidget {
 
 class _ToastSliderState extends State<ToastSlider> with TickerProviderStateMixin {
   late final ToastSetting toastSetting;
+  late final ToastStyle toastStyle;
   late final AnimationController slideController;
   late final AnimationController sizeController;
   late final Animation<Offset> slideAnimation;
@@ -55,6 +51,7 @@ class _ToastSliderState extends State<ToastSlider> with TickerProviderStateMixin
   void initState() {
     super.initState();
     toastSetting = widget.toastSetting;
+    toastStyle = widget.toastStyle;
 
     slideController = AnimationController(
       vsync: this,
@@ -120,20 +117,19 @@ class _ToastSliderState extends State<ToastSlider> with TickerProviderStateMixin
     Widget child = ToastContainerWidget(
       title: widget.title,
       trailing: widget.trailing,
-      toastStyle: widget.toastStyle,
+      toastStyle: toastStyle,
     );
 
     // Add progress bar if required
     if (toastSetting.showProgressBar) {
-      Color progressBarColor = widget.progressBarColor ?? Theme.of(context).primaryColor;
-
       child = Stack(
         alignment: Alignment.bottomLeft,
         children: [
           child,
           ToastProgressBarWidget(
             animation: sizeAnimation,
-            color: progressBarColor,
+            toastStyle: toastStyle,
+            toastSetting: toastSetting,
           ),
         ],
       );

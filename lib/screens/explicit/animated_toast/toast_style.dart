@@ -19,6 +19,10 @@ class ToastStyle {
   /// Default is [null]
   final Border? border;
 
+  /// The color of the progress bar.
+  /// Default is [Theme.of(context).primaryColor]
+  final Color? progressBarColor;
+
   const ToastStyle({
     this.backgroundColor = Colors.white,
     this.boxShadow = const BoxShadow(
@@ -30,6 +34,7 @@ class ToastStyle {
     ),
     this.borderRadius = const BorderRadius.all(Radius.circular(8)),
     this.border,
+    this.progressBarColor,
   });
 
   ToastStyle copyWith({
@@ -37,12 +42,14 @@ class ToastStyle {
     BoxShadow? boxShadow,
     BorderRadius? borderRadius,
     Border? border,
+    Color? progressBarColor,
   }) {
     return ToastStyle(
       backgroundColor: backgroundColor ?? this.backgroundColor,
       boxShadow: boxShadow ?? this.boxShadow,
       borderRadius: borderRadius ?? this.borderRadius,
       border: border ?? this.border,
+      progressBarColor: progressBarColor ?? this.progressBarColor,
     );
   }
 }

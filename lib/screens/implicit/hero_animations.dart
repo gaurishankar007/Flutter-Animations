@@ -20,8 +20,9 @@ class HeroAnimation extends StatefulWidget {
 
 class _HeroAnimationState extends State<HeroAnimation> {
   final List<EmojiPerson> people = const [
-    EmojiPerson(name: "John", emoji: "👨", age: "25"),
-    EmojiPerson(name: "Jane", emoji: "👩", age: "22"),
+    EmojiPerson(name: "John", emoji: "👨‍🏭", age: "25"),
+    EmojiPerson(name: "Jane", emoji: """
+👩‍🏭""", age: "22"),
   ];
 
   @override

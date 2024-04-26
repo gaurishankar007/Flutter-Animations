@@ -10,7 +10,6 @@ class ToastMessage {
     BuildContext context, {
     required Widget title,
     Widget? trailing,
-    Color? progressBarColor,
     ToastSetting toastSetting = const ToastSetting(),
     ToastStyle toastStyle = const ToastStyle(),
   }) {
@@ -27,7 +26,6 @@ class ToastMessage {
         overlayEntry: overlayEntry,
         title: title,
         trailing: trailing,
-        progressBarColor: progressBarColor,
         toastSetting: toastSetting,
         toastStyle: toastStyle,
       ),
@@ -54,7 +52,6 @@ class ToastMessage {
         color: Colors.green,
         size: checkIconSize,
       ),
-      progressBarColor: Colors.green,
       toastSetting: toastSetting,
       toastStyle: toastStyle.copyWith(
         boxShadow: BoxShadow(
@@ -63,6 +60,7 @@ class ToastMessage {
           spreadRadius: 3,
           offset: const Offset(2, 2),
         ),
+        progressBarColor: Colors.green,
       ),
     );
   }
@@ -85,7 +83,6 @@ class ToastMessage {
         color: Colors.red,
         size: checkIconSize,
       ),
-      progressBarColor: Colors.red,
       toastSetting: toastSetting,
       toastStyle: toastStyle.copyWith(
         boxShadow: BoxShadow(
@@ -94,6 +91,7 @@ class ToastMessage {
           spreadRadius: 3,
           offset: const Offset(2, 2),
         ),
+        progressBarColor: Colors.red,
       ),
     );
   }
