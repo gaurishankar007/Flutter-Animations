@@ -1,8 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_animations/screens/explicit/animated_toast/toast_style.dart';
-
-import 'animated_toast/toast_message.dart';
-import 'animated_toast/toast_setting.dart';
+import 'package:flutter_sliding_toast/flutter_sliding_toast.dart';
 
 class AnimatedToast extends StatelessWidget {
   const AnimatedToast({super.key});
@@ -14,7 +11,7 @@ class AnimatedToast extends StatelessWidget {
         iconTheme: const IconThemeData(color: Colors.white),
         backgroundColor: Colors.deepPurple,
         title: const Text(
-          "Animated Toast",
+          "Sliding Toast",
           style: TextStyle(color: Colors.white),
         ),
         centerTitle: true,
@@ -26,7 +23,7 @@ class AnimatedToast extends StatelessWidget {
             const SizedBox(width: double.maxFinite),
             ElevatedButton(
               onPressed: () {
-                ToastMessage.show(
+                SlidingToast.show(
                   context,
                   title: const Text(
                     "Hi there! I'm a simple toast 😎. Dismiss me by sliding downward.",
@@ -46,7 +43,7 @@ class AnimatedToast extends StatelessWidget {
             const SizedBox(height: 30),
             ElevatedButton(
               onPressed: () {
-                ToastMessage.show(
+                SlidingToast.show(
                   context,
                   title: const Text(
                     "Hi there! I'm a simple toast 😎. Dismiss me by sliding upward.",
@@ -66,7 +63,7 @@ class AnimatedToast extends StatelessWidget {
             const SizedBox(height: 30),
             ElevatedButton(
               onPressed: () {
-                ToastMessage.showError(
+                SlidingToast.showError(
                   context,
                   title: const Text(
                     "Hi there! I'm a error toast 😈",
@@ -83,7 +80,7 @@ class AnimatedToast extends StatelessWidget {
             const SizedBox(height: 30),
             ElevatedButton(
               onPressed: () {
-                ToastMessage.showSuccess(
+                SlidingToast.showSuccess(
                   context,
                   title: const Text(
                     "Hi there! I'm a success toast 😎",
@@ -100,7 +97,7 @@ class AnimatedToast extends StatelessWidget {
             const SizedBox(height: 30),
             ElevatedButton(
               onPressed: () {
-                ToastMessage.show(
+                SlidingToast.show(
                   context,
                   title: const Text(
                     "Hi there! I'm modified toast 😎 with only title widget "

@@ -34,3 +34,10 @@ Simple to complex animations and their use cases.
 - `Curved Animation`
 - `Animation`
 - `Always Stopped Animation`
+
+## Flutter Animation Packages
+
+Checkout my flutter animation packages in pub.dev
+
+- [`flutter_sliding_toast`](https://pub.dev/packages/flutter_sliding_toast)
+  - A sliding toast for displaying message.

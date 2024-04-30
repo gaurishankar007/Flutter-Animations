@@ -83,6 +83,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "2.0.2"
+  flutter_sliding_toast:
+    dependency: "direct main"
+    description:
+      name: flutter_sliding_toast
+      sha256: d5e649b437c52a46ddfb70a980fc9ab406a950301fa79caf1aa6c13f51946aed
+      url: "https://pub.dev"
+    source: hosted
+    version: "1.0.1"
   flutter_test:
     dependency: "direct dev"
     description: flutter
@@ -265,3 +273,4 @@ packages:
     version: "3.0.3"
 sdks:
   dart: ">=3.2.0-0 <4.0.0"
+  flutter: ">=1.17.0"
